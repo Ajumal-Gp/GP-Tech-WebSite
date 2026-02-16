@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/opicae/gptechnologies.ae
-    - /bin/cp -R * $DEPLOYPATH
