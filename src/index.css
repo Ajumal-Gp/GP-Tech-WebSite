@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 160 60% 95%;
+    --accent-foreground: 160 84% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 160 84% 39%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 30%));
+    --gradient-hero: linear-gradient(to bottom right, hsl(220 30% 10%), hsl(220 35% 15%));
+    --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 35% 4%;
+    --foreground: 210 40% 98%;
+    --card: 220 35% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20;
+    background-color: #F8F9FA;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  /* Tech Hover Effects */
+  .tech-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .tech-hover:hover {
+    @apply -translate-y-1 shadow-elevated;
+  }
+
+  .tech-card {
+    @apply relative overflow-hidden transition-all duration-500 ease-out;
+  }
+
+  .tech-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
+  }
+
+  .tech-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .tech-card:hover {
+    @apply -translate-y-2 shadow-elevated;
+    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.15);
+  }
+
+  /* Glow Effects */
+  .glow-on-hover {
+    @apply transition-all duration-300;
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+  }
+
+  /* Shimmer Effect */
+  .shimmer-effect {
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(var(--primary) / 0.1) 50%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Animated Border */
+  .animated-border {
+    @apply relative;
+  }
+
+  .animated-border::after {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--primary)));
+    background-size: 200% 100%;
+    animation: border-flow 3s ease infinite;
+    z-index: -1;
+    padding: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .animated-border:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Tech Button */
+  .tech-button {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .tech-button::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.2), transparent);
+  }
+
+  .tech-button:hover::before {
+    @apply opacity-100;
+  }
+
+  .tech-button:hover {
+    @apply scale-105;
+    box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.5);
+  }
+
+  /* Icon Hover */
+  .icon-hover {
+    @apply transition-all duration-300;
+  }
+
+  .icon-hover:hover {
+    @apply scale-110 text-primary;
+  }
+
+  /* Link Underline Animation */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Glass Effect */
+  .glass-effect {
+    @apply backdrop-blur-md;
+    background: hsl(var(--background) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Pulse Ring */
+  .pulse-ring {
+    @apply relative;
+  }
+
+  .pulse-ring::after {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+
+    70% {
+      box-shadow: 0 0 0 20px hsl(var(--primary) / 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+    }
+  }
+
+  /* Data Lines Background */
+  .data-lines {
+    background-image:
+      linear-gradient(0deg, transparent 24%, hsl(var(--primary) / 0.05) 25%, hsl(var(--primary) / 0.05) 26%, transparent 27%, transparent 74%, hsl(var(--primary) / 0.05) 75%, hsl(var(--primary) / 0.05) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, hsl(var(--primary) / 0.05) 25%, hsl(var(--primary) / 0.05) 26%, transparent 27%, transparent 74%, hsl(var(--primary) / 0.05) 75%, hsl(var(--primary) / 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+  }
+
+  /* Circuit Pattern */
+  .circuit-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Floating Animation */
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .floating-delayed {
+    animation: float 3s ease-in-out infinite 1s;
+  }
+
+  /* Stagger Animation Helper */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+
+  /* Custom Site Loader */
+  .loader {
+    height: 12px;
+    width: 60px;
+    --c: no-repeat linear-gradient(hsl(var(--primary)) 0 0);
+    background: var(--c), var(--c), var(--c), var(--c);
+    background-size: 26% 3px;
+    animation: l8 1s infinite;
+  }
+
+  @keyframes l8 {
+
+    0%,
+    70%,
+    100% {
+      background-position: calc(0 * 100% / 3) 50%, calc(1 * 100% / 3) 50%, calc(2 * 100% / 3) 50%, calc(3 * 100% / 3) 50%
+    }
+
+    23.33% {
+      background-position: calc(0 * 100% / 3) 100%, calc(1 * 100% / 3) 66%, calc(2 * 100% / 3) 33%, calc(3 * 100% / 3) 0
+    }
+
+    46.67% {
+      background-position: calc(3 * 100% / 3) 100%, calc(2 * 100% / 3) 66%, calc(1 * 100% / 3) 33%, calc(0 * 100% / 3) 0
+    }
+
+    69.99% {
+      background-position: calc(3 * 100% / 3) 50%, calc(2 * 100% / 3) 50%, calc(1 * 100% / 3) 50%, calc(0 * 100% / 3) 50%
+    }
+  }
+}
