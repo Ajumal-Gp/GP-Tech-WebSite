@@ -20,6 +20,7 @@ import cloudComputingImg from "@/assets/services/Cloud-3.jpg";
 import iotImg from "@/assets/services/iot.jpg";
 import arVrImg from "@/assets/services/ar-vr-1.jpg";
 import gis3dImg from "@/assets/services/3D-2.jpg";
+import digitalMarketingImg from "@/assets/services/markus-spiske-pKHWFu0BqYU-unsplash.jpg";
 
 const servicesData = [
   {
@@ -102,6 +103,23 @@ const servicesData = [
     features: ["Geospatial Analysis", "3D Visualization", "Urban Planning Tools", "Asset Mapping"],
     image: gis3dImg,
   },
+  {
+    id: "digital-marketing",
+    chapter: "09",
+    meta: "GROWTH MARKETING",
+    title: "Digital",
+    emphasis: "Marketing",
+    description: "Grow brand visibility and revenue with full-funnel digital marketing strategies, performance campaigns, content production, and creative brand systems.",
+    features: [
+      "Social Media Marketing",
+      "Performance Marketing",
+      "SEO",
+      "Influencer Marketing",
+      "Production",
+      "Branding & Creative",
+    ],
+    image: digitalMarketingImg,
+  },
 ];
 
 const Services = () => {
@@ -136,15 +154,15 @@ const Services = () => {
   return (
     <div className="w-full bg-black relative">
       <Helmet>
-        <title>Tech Services & AI Solutions in Dubai | Grow Plus Technologies</title>
+        <title>Top IT, AI & Digital Marketing Services UAE | Grow Plus Technologies</title>
         <meta
           name="description"
-          content="Leading provider of AI, Robotics, Data Analytics, Cybersecurity, and Cloud Computing in UAE. We drive enterprise excellence through intelligent technology."
+          content="GP Technologies offers AI, robotics, data analytics, cloud, cybersecurity, IoT, AR/VR, GIS, 3D modeling, SEO, and digital marketing services for UAE businesses."
         />
-        <meta name="keywords" content="AI solutions Dubai, Robotics automation UAE, Cybersecurity services Dubai, GIS modeling UAE, Cloud computing Dubai, Data Analytics UAE, IoT solutions Dubai, AR VR development UAE" />
-        <meta property="og:title" content="Advanced Tech Services in Dubai | Grow Plus Technologies" />
-        <meta property="og:description" content="Explore GP Technologies' award-winning AI, Automation, and Digital Transformation services in the UAE." />
-        <meta property="og:image" content="https://gptechnologies.ae/gp-logo.jpeg" />
+        <meta name="keywords" content="Top IT companies in UAE, top sme companies in UAE, Top UAE Local IT companies, AI solutions Dubai, AI automation for SMEs UAE, Chatbot development company Dubai, Robotic process automation UAE, Machine learning consulting Dubai, Cloud consulting services Dubai, Cloud migration company UAE, Cloud cost optimization UAE, Digital transformation strategy Dubai, Legacy system modernization UAE, IT infrastructure consulting Dubai, Managed IT services Dubai, digital marketing services Dubai, SEO services UAE, social media marketing Dubai, Technology partners UAE, Apptunix technology partner, IDC Technologies partner, Apptunix UAE, IDC Technologies UAE" />
+        <meta property="og:title" content="Top IT, AI & Digital Marketing Services in UAE | Grow Plus Technologies" />
+        <meta property="og:description" content="Explore AI, automation, cloud, cybersecurity, SEO, and digital marketing services from a UAE technology partner for SMEs." />
+        <meta property="og:image" content="https://gptechnologies.ae/gp-logo-square.png?v=3" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">
@@ -169,7 +187,8 @@ const Services = () => {
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Computing" }},
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Internet of Things (IoT)" }},
                   { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AR & VR Solutions" }},
-                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GIS & 3D Modeling" }}
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GIS & 3D Modeling" }},
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing Services" }}
                 ]
               }
             }
@@ -271,7 +290,7 @@ const Services = () => {
             }
           }}
           onSlideChangeTransitionEnd={(swiper) => {
-            // Only allow unlocking once the transition to the 8th slide is complete
+            // Only allow unlocking once the transition to the final slide is complete
             if (swiper.isEnd) {
               setCanUnlock(true);
             }
@@ -345,16 +364,23 @@ const Services = () => {
                         {service.description}
                       </p>
 
-                      <ul className="grid grid-cols-1 gap-y-3 sm:gap-y-5 gap-x-8 mb-8 lg:mb-12">
-                        {service.features.map((feature, i) => (
-                          <li key={i} className="flex items-start gap-3 sm:gap-4 text-white group cursor-default">
-                            <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 group-hover:bg-primary/40 transition-colors shrink-0">
-                              <CheckCircle2 className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-primary" />
-                            </div>
-                            <span className="text-xs sm:text-sm font-semibold tracking-wide group-hover:text-primary transition-colors">{feature}</span>
-                          </li>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-8 mb-8 lg:mb-12">
+                        {[
+                          service.features.slice(0, 4),
+                          service.features.slice(4),
+                        ].map((featureGroup, groupIndex) => (
+                          <ul key={groupIndex} className="space-y-3 sm:space-y-5">
+                            {featureGroup.map((feature) => (
+                              <li key={feature} className="flex items-start gap-3 sm:gap-4 text-white group cursor-default">
+                                <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 group-hover:bg-primary/40 transition-colors shrink-0">
+                                  <CheckCircle2 className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-primary" />
+                                </div>
+                                <span className="text-xs sm:text-sm font-semibold tracking-wide group-hover:text-primary transition-colors">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
                         ))}
-                      </ul>
+                      </div>
 
                       <Button
                         asChild

@@ -35,6 +35,9 @@ const Footer = () => {
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Empowering the future through intelligent technology. Dubai-based innovation leaders driving digital transformation.
             </p>
+            <p className="text-primary-foreground/60 text-xs leading-relaxed">
+              Grow Plus Technologies, also known as GP Technologies UAE, is the Dubai-based AI company operating at gptechnologies.ae.
+            </p>
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a

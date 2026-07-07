@@ -113,7 +113,7 @@ const Hero = () => {
               <Sparkles className="w-4 h-4 text-primary" />
             </motion.div>
             <span className="text-primary text-sm font-medium">
-              Dubai's Leading Tech Innovator
+              AI SEAL - DUBAI FUTURE FOUNDATION
             </span>
           </motion.div>
 
@@ -137,9 +137,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg sm:text-xl text-primary-foreground/60 mb-12 leading-relaxed max-w-2xl font-light"
           >
-            We're UAE Certified AI company – A UAE-based SME driving digital excellence through
-            strategic innovation, fully aligned with the
-            National AI Strategy 2031.
+            Recognized as a <span className="text-primary font-medium">Top IT Company in UAE</span> and a premier 
+            <span className="text-primary font-medium"> SME company in UAE</span>, we drive digital excellence 
+            through strategic innovation, fully aligned with the UAE National AI Strategy 2031.
           </motion.p>
 
           {/* CTA Buttons */}

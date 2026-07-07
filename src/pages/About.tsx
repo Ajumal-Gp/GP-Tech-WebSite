@@ -47,15 +47,15 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Grow Plus Technologies | Top AI & Tech Leaders in UAE</title>
+        <title>About Grow Plus Technologies | Top IT Companies & Best SME in UAE</title>
         <meta
           name="description"
-          content="Grow Plus Technologies is a premier AI company and leading SME in UAE, pioneering digital excellence and innovation since 2024."
+          content="Grow Plus Technologies, also known as GP Technologies UAE, is a Dubai-based AI company and SME technology partner operating through gptechnologies.ae since 2024."
         />
-        <meta name="keywords" content="Best Tech Companies in UAE, SME companies in UAE, AI innovation Dubai, Grow Plus Technologies mission, Digital leaders Dubai, Technology SMEs UAE" />
-        <meta property="og:title" content="Leadership & Innovation | Grow Plus Technologies" />
-        <meta property="og:description" content="Discover why GP Technologies is a leading SME in UAE and one of the best technology companies in the region." />
-        <meta property="og:image" content="https://gptechnologies.ae/gp-logo.jpeg" />
+        <meta name="keywords" content="Grow Plus Technologies Dubai, Grow Plus Technologies AI company, GP Technologies UAE, GP Technologies UAE not Canada, Grow Plus Technologies reviews, gptechnologies.ae, Top IT companies in UAE, Top SME companies in UAE, Top UAE Local IT companies, Best Tech Companies in Dubai, SME companies in UAE, Digital leaders Dubai, Technology partners UAE, Apptunix technology partner, IDC Technologies partner, Apptunix UAE, IDC Technologies UAE" />
+        <meta property="og:title" content="Leadership in IT & Innovation | Grow Plus Technologies" />
+        <meta property="og:description" content="Discover why GP Technologies is a top SME in UAE and one of the best local IT companies in the region." />
+        <meta property="og:image" content="https://gptechnologies.ae/gp-logo-square.png?v=3" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gptechnologies.ae/about-us/" />
@@ -90,8 +90,9 @@ const About = () => {
             </motion.h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Grow Plus Technologies is a pioneering Dubai-based company established in 2024,
-              recognized as one of the <span className="text-foreground font-medium">Best Technology Companies in UAE</span>.
-              As a leading <span className="text-foreground font-medium">SME company in UAE</span>,
+              recognized as one of the <span className="text-foreground font-medium">Top IT companies in UAE</span>.
+              As a premier <span className="text-foreground font-medium">SME company in UAE</span> and a leading 
+              <span className="text-foreground font-medium"> Local IT expert</span>,
               we are dedicated to driving digital excellence and delivering world-class technological solutions.
             </p>
           </motion.div>

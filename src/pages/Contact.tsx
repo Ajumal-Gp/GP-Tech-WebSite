@@ -193,12 +193,12 @@ const Contact = () => {
         <title>Contact Us | Grow Plus Technologies</title>
         <meta
           name="description"
-          content="Contact Grow Plus Technologies for AI, Robotics, GIS and Digital Solutions in Dubai."
+          content="Contact Grow Plus Technologies, also known as GP Technologies UAE, at gptechnologies.ae for AI, robotics, GIS, digital marketing, and digital solutions in Dubai."
         />
-        <meta name="keywords" content="Contact technology company UAE, Best tech company Dubai contact, UAE certified AI company contact, Grow Plus Technologies location" />
-        <meta property="og:title" content="Contact GP Technologies | UAE Certified AI Company" />
+        <meta name="keywords" content="Contact technology company UAE, Best tech company Dubai contact, UAE certified AI company contact, Grow Plus Technologies location, Grow Plus Technologies Dubai, GP Technologies UAE, GP Technologies UAE not Canada, Grow Plus Technologies reviews, gptechnologies.ae, Technology partners UAE, Apptunix technology partner, IDC Technologies partner, Apptunix UAE, IDC Technologies UAE" />
+        <meta property="og:title" content="Contact Grow Plus Technologies | UAE Certified AI Company" />
         <meta property="og:description" content="Get in touch with one of the best technology companies in UAE for AI and digital transformation." />
-        <meta property="og:image" content="https://gptechnologies.ae/gp-logo.jpeg" />
+        <meta property="og:image" content="https://gptechnologies.ae/gp-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gptechnologies.ae/contact-us/" />

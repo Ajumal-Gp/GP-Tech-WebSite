@@ -4,15 +4,11 @@ import dai1 from "@/assets/services/DAI-1.jpg";
 const partners = [{
   name: "DTME",
   logo: "https://dstme.com/wp-content/uploads/2020/01/dstme-logo-1-90x90.png",
-  url: "https://www.dtme.com"
+  url: "https://dstme.com/"
 }, {
   name: "COMMI AI",
   logo: "https://www.getcommi.com/_next/image?url=%2Fnew_commi_logo.png&w=128&q=75",
   url: "https://www.getcommi.com/"
-}, {
-  name: "C1Smart",
-  logo: "https://www.coreoneoffice.com/images/logo.png",
-  url: "https://www.coreoneoffice.com/"
 }, {
   name: "Digiverse",
   logo: "https://www.digiverse360.io/assets/imgs/logo/site-logo-white-2.png",
@@ -22,16 +18,16 @@ const partners = [{
   logo: "https://www.code-brew.com/wp-content/themes/Avada-Child-Theme/media/2025/01/codebrew-black-logo.svg",
   url: "https://www.code-brew.com/"
 }, {
-  name: "SAP",
-  logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
-  url: "https://www.sap.com"
+  name: "Phaedra Solution",
+  logo: "https://cdn.prod.website-files.com/61580563c5ddbeb1da601c72/67e6570aeef649dcb08ae2e2_Phaedra%20Logo.svg",
+  url: "https://www.phaedrasolutions.com/"
 }, {
   name: "IDC Technologies",
-  logo: "https://www.idctechnologies.com/images/IDC-LOGO.svg",
+  logo: "https://idctechnologies.com/images/IDC-LOGO.svg",
   url: "https://www.idctechnologies.com"
 }, {
   name: "Apptunix",
-  logo: "https://cdn-hjokj.nitrocdn.com/xKvPrJeRKcMfBVHKpjbxbYMvqmxtHXge/assets/images/optimized/rev-3118eef/media.apptunix.com/wp-content/uploads/2024/04/24122147/appunix_logo.svg",
+  logo: "https://cdn-ilekcpi.nitrocdn.com/vCCmxlQuvBfGycLzSopQxpSGBKxGkQcQ/assets/images/optimized/rev-e3101a0/www.apptunix.ae/wp-content/uploads/2026/02/appunix_logo.svg",
   url: "https://www.apptunix.com"
 }, {
   name: "Sisgain",
@@ -183,6 +179,9 @@ const PartnersClients = () => {
       <h3 className="text-xl font-semibold text-foreground text-center mb-0">
         Technology Partners
       </h3>
+      <p className="mt-3 text-center text-sm text-muted-foreground max-w-2xl mx-auto px-6">
+        Our UAE technology partner ecosystem includes Apptunix, IDC Technologies, Phaedra Solution, Digiverse, Code-Brew, DTME, COMMI AI, and Sisgain.
+      </p>
 
       <div className="relative w-full overflow-hidden py-12">
         {/* Gradient Overlays for smooth edges */}

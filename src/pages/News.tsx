@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -7,13 +8,26 @@ import { Button } from "@/components/ui/button";
 import intersecImg from "@/assets/News/WITEX-1.jpeg";
 import partnersImg from "@/assets/News/UAE-AI-Strategy.png";
 import dubaiImg from "@/assets/News/AI-seal-6.jpg";
+import dubaiItImg from "@/assets/News/dubai-it-award.jpg";
 import gitexImg from "@/assets/News/GITEX-2.jpeg";
 import cybersecurityNewsImg from "@/assets/News/cybersecurity_news.png";
 import roboticsNewsImg from "@/assets/News/robotics_news.png";
-
-
+import digitalMarketingImg from "@/assets/services/markus-spiske-pKHWFu0BqYU-unsplash.jpg";
+import aiServiceImg from "@/assets/services/ai-1.jpg";
+import automationImg from "@/assets/services/Auto-1.jpg";
+import dataAnalyticsImg from "@/assets/services/DnA-4.jpg";
+import cloudImg from "@/assets/services/Cloud-3.jpg";
 
 const newsItems = [
+  {
+    id: 7,
+    title: "Dubai-it: A New Award for a City That Doesn't Wait Around",
+    excerpt:
+      "Dubai has launched the Dubai-it Award, a new annual honor recognizing individuals, companies, institutions, and projects that turn bold ambition into visible results with speed and impact.",
+    date: "July 2026",
+    category: "Innovation",
+    image: dubaiItImg,
+  },
   {
     id: 1,
     title: "GP Technologies Attends INTERSEC to Explore Innovation and Expansion",
@@ -60,6 +74,69 @@ const newsItems = [
     image: roboticsNewsImg,
   },
   {
+    id: 8,
+    title: "How Much Does AI Automation Cost in UAE?",
+    excerpt:
+      "AI automation cost depends on workflow complexity, integrations, data readiness, and support needs, so UAE SMEs can often start small before scaling larger systems.",
+    date: "July 2026",
+    category: "AI Guide",
+    image: aiServiceImg,
+  },
+  {
+    id: 9,
+    title: "Is AI Automation Worth It for Small Businesses?",
+    excerpt:
+      "AI automation is worth it when it removes repetitive work, reduces errors, improves response time, or helps small teams serve more customers efficiently.",
+    date: "July 2026",
+    category: "AI Insights",
+    image: aiServiceImg,
+  },
+  {
+    id: 10,
+    title: "How Long Does Digital Transformation Take?",
+    excerpt:
+      "A focused roadmap can produce early results within weeks, while larger digital transformation programs may take months depending on systems and teams.",
+    date: "July 2026",
+    category: "Transformation",
+    image: dataAnalyticsImg,
+  },
+  {
+    id: 11,
+    title: "What Industries Benefit Most from AI in UAE?",
+    excerpt:
+      "Retail, logistics, finance, real estate, government services, healthcare, education, and manufacturing can all gain measurable value from AI and automation.",
+    date: "July 2026",
+    category: "AI Trends",
+    image: automationImg,
+  },
+  {
+    id: 12,
+    title: "How Do I Know If My Business Needs Automation?",
+    excerpt:
+      "If teams repeat manual tasks, approvals move slowly, systems do not connect, or reports depend on spreadsheets, automation can unlock immediate efficiency.",
+    date: "July 2026",
+    category: "Automation",
+    image: cloudImg,
+  },
+  {
+    id: 13,
+    title: "What Is the UAE Certified AI Company Badge?",
+    excerpt:
+      "The UAE Certified AI Company badge signals trusted AI practices, responsible implementation, and alignment with the UAE's fast-growing AI ecosystem.",
+    date: "July 2026",
+    category: "AI Compliance",
+    image: dubaiImg,
+  },
+  {
+    id: 14,
+    title: "How Can SEO Help UAE Businesses Get More Qualified Leads?",
+    excerpt:
+      "SEO helps UAE businesses improve visibility for high-intent searches, strengthen website content, and attract customers already looking for their services.",
+    date: "July 2026",
+    category: "SEO",
+    image: digitalMarketingImg,
+  },
+  {
     id: 5,
     title: "New Cybersecurity Framework for UAE Government Entities",
     excerpt:
@@ -71,6 +148,10 @@ const newsItems = [
 ];
 
 const News = () => {
+  const [visibleArticleCount, setVisibleArticleCount] = useState(6);
+  const visibleNewsItems = newsItems.slice(0, visibleArticleCount);
+  const isShowingAllArticles = visibleArticleCount === newsItems.length;
+
   const { ref: headerRef, inView: headerInView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -79,15 +160,15 @@ const News = () => {
   return (
     <>
       <Helmet>
-        <title>Latest Tech News & AI Insights Dubai | Grow Plus Technologies</title>
+        <title>Latest Tech News, SEO Blogs & AI Insights Dubai | Grow Plus Technologies</title>
         <meta
           name="description"
-          content="Follow the latest trends in AI, Robotics, and Digital Transformation in Dubai. Expert insights from GP Technologies, your certified AI partner in UAE."
+          content="Read GP Technologies blogs on AI automation cost in UAE, digital transformation, UAE Certified AI Company guidance, SEO, digital marketing, and technology trends in Dubai."
         />
-        <meta name="keywords" content="Tech news UAE, AI updates Dubai, GP Technologies news, Best technology insights UAE" />
-        <meta property="og:title" content="GP Technologies News | UAE Certified AI Company" />
+        <meta name="keywords" content="AI automation cost UAE, Is AI automation worth it for small businesses, How long does digital transformation take, UAE Certified AI Company badge, SEO blogs Dubai, digital marketing UAE, AI trends in UAE, GP Technologies news, Technology partners UAE, Apptunix technology partner, IDC Technologies partner, Apptunix UAE, IDC Technologies UAE" />
+        <meta property="og:title" content="Grow Plus Technologies News | UAE Certified AI Company" />
         <meta property="og:description" content="Latest insights into AI and technology from one of the best technology companies in UAE." />
-        <meta property="og:image" content="https://gptechnologies.ae/gp-logo.jpeg" />
+        <meta property="og:image" content="https://gptechnologies.ae/gp-logo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="robots" content="index, follow" />
       </Helmet>
@@ -123,7 +204,7 @@ const News = () => {
       <section className="py-24">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsItems.map((item, index) => (
+            {visibleNewsItems.map((item, index) => (
               <motion.article
                 key={item.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -167,7 +248,6 @@ const News = () => {
             ))}
           </div>
 
-          {/* Load More */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -179,8 +259,11 @@ const News = () => {
               variant="outline"
               size="lg"
               className="font-semibold px-8"
+              onClick={() =>
+                setVisibleArticleCount(isShowingAllArticles ? 6 : newsItems.length)
+              }
             >
-              Load More Articles
+              {isShowingAllArticles ? "Back to Normal" : "Load More Articles"}
             </Button>
           </motion.div>
         </div>
