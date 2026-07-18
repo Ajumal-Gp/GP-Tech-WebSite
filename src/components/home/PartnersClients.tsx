@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { Award, Target, Sparkles } from "lucide-react";
 import dai1 from "@/assets/services/DAI-1.jpg";
+import dubaiMunicipality from "@/assets/clients/dubai-municipality.png";
+import dubaiPolice from "@/assets/clients/dubai-police.png";
+import edgeLogo from "@/assets/partners/edge-logo.png";
+
+const clients = [
+  {
+    name: "Dubai Police",
+    logo: dubaiPolice,
+  },
+  {
+    name: "Dubai Municipality",
+    logo: dubaiMunicipality,
+  },
+];
+
 const partners = [{
   name: "DTME",
   logo: "https://dstme.com/wp-content/uploads/2020/01/dstme-logo-1-90x90.png",
@@ -180,7 +195,7 @@ const PartnersClients = () => {
         Technology Partners
       </h3>
       <p className="mt-3 text-center text-sm text-muted-foreground max-w-2xl mx-auto px-6">
-        Our UAE technology partner ecosystem includes Apptunix, IDC Technologies, Phaedra Solution, Digiverse, Code-Brew, DTME, COMMI AI, and Sisgain.
+        Our UAE technology partner ecosystem includes EDGE, Apptunix, IDC Technologies, Phaedra Solution, Digiverse, Code-Brew, DTME, COMMI AI, and Sisgain.
       </p>
 
       <div className="relative w-full overflow-hidden py-12">
@@ -231,6 +246,46 @@ const PartnersClients = () => {
             animation-play-state: paused !important;
           }
         `}} />
+      </div>
+    </motion.div>
+
+    {/* Clients Section */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="mt-16 pb-20 w-full max-w-5xl mx-auto px-4"
+    >
+      <h3 className="text-2xl font-semibold text-foreground text-center mb-2">
+        Valued Clients
+      </h3>
+      <p className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-10">
+        Proudly delivering innovative technological solutions to leading government institutions.
+      </p>
+
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12">
+        {clients.map((client) => (
+          <motion.div
+            key={client.name}
+            className="flex items-center justify-center p-8 bg-card/60 backdrop-blur-md rounded-2xl shadow-lg h-36 w-72 group relative overflow-hidden"
+            whileHover={{
+              y: -8,
+              scale: 1.03,
+              boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            {/* Background Glow on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <img
+              src={client.logo}
+              alt={`${client.name} logo`}
+              className="relative z-10 max-h-20 max-w-[85%] object-contain filter drop-shadow-md group-hover:scale-105 transition-all duration-300 ease-out"
+            />
+          </motion.div>
+        ))}
       </div>
     </motion.div>
   </section>;
